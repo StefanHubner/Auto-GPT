@@ -4,6 +4,7 @@ FROM python:3.10-slim
 # Install git
 RUN apt-get -y update
 RUN apt-get -y install git chromium-driver
+RUN apt-get -y install r-base texlive
 
 # Install Xvfb and other dependencies for headless browser testing
 RUN apt-get update \
