@@ -7,6 +7,7 @@ from autogpt.commands.analyze_code import analyze_code
 from autogpt.commands.audio_text import read_audio_from_file
 from autogpt.commands.execute_code import (
     execute_python_file,
+    execute_r_file,
     execute_shell,
     execute_shell_popen,
 )
@@ -189,6 +190,8 @@ def execute_command(command_name: str, arguments):
             return write_tests(arguments["code"], arguments.get("focus"))
         elif command_name == "execute_python_file":  # Add this command
             return execute_python_file(arguments["file"])
+        elif command_name == "execute_r_file":  # Add this command
+            return execute_r_file(arguments["file"])
         elif command_name == "execute_shell":
             if CFG.execute_local_commands:
                 return execute_shell(arguments["command_line"])

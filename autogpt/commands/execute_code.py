@@ -8,6 +8,9 @@ from docker.errors import ImageNotFound
 from autogpt.workspace import WORKSPACE_PATH, path_in_workspace
 
 
+def execute_r_file(file: str) -> str:
+    return(execute_shell("Rscript %s" % file))
+
 def execute_python_file(file: str) -> str:
     """Execute a Python file in a Docker container and return the output
 
