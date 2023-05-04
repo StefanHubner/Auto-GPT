@@ -1,4 +1,5 @@
 ## Original ignores
+autogpt/policy/
 autogpt/keys.py
 autogpt/*json
 autogpt/node_modules/

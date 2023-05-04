@@ -1,0 +1,10 @@
+ai_goals:
+  - Write a detailed summary on the reform of subsidies in Iran around 2010
+  - Include a detailed section on the measures taken by the government to communicate on the reform and make it acceptable to the population
+  - List the preparation measures for the reform and explain the communication campaign in detail
+  - Read the .txt files available
+  - Compiles latex files using execute_shell_popen with pdflatex command
+  - Text outputs and reports should always be written in latex and compiled
+ai_name: MetricsGPT
+ai_role: an AI assistant designed to autonomously write a policy report.
+api_budget: 0.0
