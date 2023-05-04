@@ -12,6 +12,13 @@ RUN apt-get update && apt-get install -y \
 # Install utilities
 RUN apt-get install -y curl jq wget git
 RUN apt-get install -y texlive r-base
+RUN apt-get install -y poppler-utils
+
+# Run as user, not root
+#RUN useradd -d /app -m -s /bin/bash autogpt && echo "autogpt:econ" | chpasswd && adduser autogpt sudo
+#USER autogpt
+
+COPY requirements.txt .
 
 # Set environment variables
 ENV PIP_NO_CACHE_DIR=yes \
@@ -19,8 +26,7 @@ ENV PIP_NO_CACHE_DIR=yes \
     PYTHONDONTWRITEBYTECODE=1
 
 # Install the required python packages globally
-ENV PATH="$PATH:/root/.local/bin"
-COPY requirements.txt .
+ENV PATH="$PATH:/autogpt/.local/bin:/app/.local/bin"
 
 # Set the entrypoint
 ENTRYPOINT ["python", "-m", "autogpt"]
@@ -30,6 +36,7 @@ FROM autogpt-base as autogpt-dev
 RUN pip install --no-cache-dir -r requirements.txt
 WORKDIR /app
 ONBUILD COPY . ./
+
 
 # release build -> include bare minimum
 FROM autogpt-base as autogpt-release
