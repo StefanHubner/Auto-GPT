@@ -26,7 +26,7 @@ ENV PIP_NO_CACHE_DIR=yes \
     PYTHONDONTWRITEBYTECODE=1
 
 # Install the required python packages globally
-ENV PATH="$PATH:/autogpt/.local/bin:/app/.local/bin"
+ENV PATH="$PATH:/root/.local/bin:/app/.local/bin"
 
 # Set the entrypoint
 ENTRYPOINT ["python", "-m", "autogpt"]
