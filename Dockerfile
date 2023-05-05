@@ -15,7 +15,7 @@ RUN apt-get install -y texlive r-base
 RUN apt-get install -y poppler-utils
 
 #RUN Rscript -e "install.packages(c('tidyverse', 'ggplot2'))"
-RUN pip3 install numpy scipy statsmodels pandas plotly matplotlib
+RUN pip3 install numpy scipy statsmodels pandas plotly matplotlib scikit-learn
 
 # Run as user, not root
 #RUN useradd -d /app -m -s /bin/bash autogpt && echo "autogpt:econ" | chpasswd && adduser autogpt sudo
