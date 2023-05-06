@@ -7,6 +7,7 @@ ai_goals:
   - Include citations to the relevant links
   - Write an introduction summarising all sections, also without a preamble
   - Create a standalone LaTex document with a descriptive report title and use the latex command 'input' to include the introduction followed by the three sections and a bibliography
+  - When writing latex files, always import the package grffile
   - Compile the tex file for the report using execute_shell_popen with pdflatex command
   - Check pdf output was produced
 ai_name: DeskResearchGPT
